@@ -1,6 +1,6 @@
 import Player from '../Common/Player.js';
 import Ball from '../Common/Ball.js';
-import {buildLevel , level1 , level2} from './levels.js';
+import {buildLevel , level1 , level2, level3} from './levels.js';
 import InputHandler from '../Common/InputHandler.js';
 import MenuManager from '../Common/MenuManager.js';
 import {BallColision} from '../Common/ColisionDetector.js';
@@ -15,7 +15,7 @@ export default class GameManager{
         this.bricks = [];
         new InputHandler(this.player, this);
         this.lives = 2;
-        this.levels = [level1, level2];
+        this.levels = [level1, level2, level3];
         this.currentLevel = 0;
         this.menuManager = new MenuManager(this.gameWidth, this.gameHeight);
         this.gameState = GameState.Menu;
@@ -53,6 +53,7 @@ export default class GameManager{
         if(this.gameState === GameState.Menu) this.menuManager.drawMenu(ctx);     
         if(this.gameState === GameState.GameOver) this.menuManager.drawGameOver(ctx);
         if(this.gameState === GameState.Finish) this.menuManager.drawFinish(ctx);
+        if(this.gameState === GameState.Running) this.drawScore(ctx);
     }
     
     goToNextLevel(){
@@ -105,6 +106,13 @@ export default class GameManager{
             this.lives--;
             this.ball.reset();
         }
+    }
+
+    drawScore(ctx){
+        ctx.font = "20px Arial";
+        ctx.fillStyle = "white";
+        ctx.textAlign = "center";
+        ctx.fillText('lives: ' + this.lives, 50, 30);
     }
 }
 

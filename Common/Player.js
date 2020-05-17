@@ -1,11 +1,12 @@
 export default class Player{
-    constructor(gameManager, playerWidth, playerHeight, positionX, positionY, canMoveX=true, canMoveY=true){
+    constructor(gameManager, playerWidth, playerHeight, positionX, positionY, canMoveX=true, canMoveY=true, playerColor='#0ff'){
         this.gameWidth = gameManager.gameWidth;
         this.gameHeight = gameManager.gameHeight;
         this.width = playerWidth;
         this.height = playerHeight;
         this.canMoveX = canMoveX;
         this.canMoveY = canMoveY;
+        this.playerColor = playerColor;
 
         this.maxSpeed = 7;
         this.speed = {
@@ -20,7 +21,7 @@ export default class Player{
     }
 
     draw(ctx){
-        ctx.fillStyle = '#0ff';
+        ctx.fillStyle = this.playerColor;
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
     }
 

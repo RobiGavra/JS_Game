@@ -14,9 +14,13 @@ export default class Ball{
         };
 
         this.position = {
-            x: Math.floor(Math.random() * this.gameWidth),
-            y: 400
+            x: this.getRndInteger(10, this.gameWidth - 10),
+            y: this.gameHeight / 2
         };
+    }
+
+    getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
     }
 
     draw(ctx){      
@@ -31,11 +35,6 @@ export default class Ball{
         this.position.y += this.speed.y;
 
         this.keepBallInMap();
-
-        if(this.position.y + this.size > this.gameHeight){
-            this.gameManager.lives--;
-            this.reset();
-        }
     }
 
     keepBallInMap(){

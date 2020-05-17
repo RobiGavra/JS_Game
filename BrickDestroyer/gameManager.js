@@ -41,6 +41,7 @@ export default class GameManager{
         this.gameObjects.forEach(object => object.update(deltaTime));
         this.bricks.forEach(brick => this.brickColision(brick));
         this.playerColision();
+        this.lifeLose();
 
         this.bricks = this.bricks.filter(object => !object.markedForDeletion);
     }
@@ -90,10 +91,18 @@ export default class GameManager{
 
         if(colisionDetector.topColision()){
             this.ball.speed.y = -this.ball.speed.y;
+            this.ball.position.y = this.player.position.y - this.ball.size;
         }
 
         if(colisionDetector.leftColision() || colisionDetector.rightColision()){
             this.ball.speed.x = -this.ball.speed.x;
+        }
+    }
+
+    lifeLose(){
+        if(this.ball.position.y + this.ball.size > this.gameHeight){
+            this.lives--;
+            this.ball.reset();
         }
     }
 }

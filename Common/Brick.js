@@ -1,11 +1,10 @@
 export default class Brick{
-    constructor(gameManager, position){
+    constructor(gameManager, position, width = 80, height = 24){
         this.gameManager = gameManager;
         this.gameWidth = gameManager.gameWidth;
         this.gameHeight = gameManager.gameHeight;
-        this.width = 80;
-        this.height = 24;
-
+        this.width = width;
+        this.height = height;
         this.position = position
         this.markedForDeletion = false;
     }

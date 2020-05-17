@@ -1,0 +1,47 @@
+body{
+    background-color: black;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    color: chartreuse;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size: 50px;
+}
+
+.container{
+   height: 70vh;
+   padding-left: 20%;
+   padding-right: 20%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.container img{
+    width: 270px;
+    height: 200px;
+    border: 2px solid crimson;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+    opacity: 0.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a{
+    color: white;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size: 20px;
+}

@@ -51,7 +51,8 @@ export default class GameManager{
             this.gameState = GameState.Running;
         }
         else {
-            this.gameState = GameState.Paused;
+            if(this.gameState !== GameState.Menu)
+                this.gameState = GameState.Paused;
         }
     }
     
@@ -93,8 +94,8 @@ export default class GameManager{
         ctx.font = "30px Arial";
         ctx.fillStyle = "white";
         ctx.textAlign = "center";
-        ctx.fillText(this.player1Score, this.gameWidth - 30, this.gameHeight - 30);
-        ctx.fillText(this.player2Score, 30, 30);
+        ctx.fillText(this.player1Score, this.gameWidth - 30, this.gameHeight - 50);
+        ctx.fillText(this.player2Score, 30, 80);
     }
 }
 

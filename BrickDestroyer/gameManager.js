@@ -68,7 +68,8 @@ export default class GameManager{
             this.gameState = GameState.Running;
         }
         else {
-            this.gameState = GameState.Paused;
+            if(this.gameState !== GameState.Menu)
+                this.gameState = GameState.Paused;
         }
     }
 

@@ -1,47 +1,34 @@
 body{
     background-color: black;
+    color: chartreuse;
+    font-family:"Comic Sans MS", cursive, sans-serif;
 }
 
-.header{
+.title{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 15vh;
-    color: chartreuse;
-    font-family:"Comic Sans MS", cursive, sans-serif;
     font-size: 25px;
 }
 
 .container{
-   height: 70vh;
+   height: 200px;
    padding-left: 20%;
    padding-right: 20%;
    display: flex;
-   align-items: center;
+   align-items: flex-start;
    justify-content: space-between;
+   margin: 40px 0px;
 }
 
 .container img{
     width: 270px;
     height: 200px;
     border: 2px solid crimson;
+    margin: 0px 40px;
 }
 
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 10vh;
-    background-color: black;
-    opacity: 0.4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-footer a{
-    color: white;
-    font-family:"Comic Sans MS", cursive, sans-serif;
-    font-size: 20px;
+.container h3{
+    margin-left: 25px;
 }

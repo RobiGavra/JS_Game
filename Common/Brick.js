@@ -1,5 +1,5 @@
 export default class Brick{
-    constructor(gameManager, position, width = 80, height = 24){
+    constructor(gameManager, position, width = 80, height = 24, color = '#A9A9A9'){
         this.gameManager = gameManager;
         this.gameWidth = gameManager.gameWidth;
         this.gameHeight = gameManager.gameHeight;
@@ -7,10 +7,11 @@ export default class Brick{
         this.height = height;
         this.position = position
         this.markedForDeletion = false;
+        this.color = color;
     }
 
     draw(ctx){
-        ctx.fillStyle = '#A9A9A9'
+        ctx.fillStyle = this.color;
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
         ctx.beginPath();
         ctx.lineWidth = "4";

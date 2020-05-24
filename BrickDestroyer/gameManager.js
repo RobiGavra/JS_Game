@@ -36,6 +36,8 @@ export default class GameManager{
         if(this.lives >= 0 && this.bricks.length === 0 && this.currentLevel === this.levels.length-1) this.gameState = GameState.Finish;
         
         this.goToNextLevel();
+        console.log(this.currentLevel);
+        console.log(this.levels.length);
         
 
         this.gameObjects.forEach(object => object.update(deltaTime));
